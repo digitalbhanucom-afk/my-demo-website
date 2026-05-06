@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Sparkles, Mail, Phone, MapPin, Github, Twitter, Linkedin, Instagram } from "lucide-react";
+import { Sparkles, Mail, Phone, MapPin, Globe, Send, MessageCircle, Camera } from "lucide-react";
 
 export function Footer() {
   return (
@@ -21,7 +21,7 @@ export function Footer() {
               Building AI-powered digital products that move businesses forward.
             </p>
             <div className="mt-5 flex gap-3">
-              {[Twitter, Linkedin, Instagram, Github].map((I, i) => (
+              {[Send, Globe, Camera, MessageCircle].map((I, i) => (
                 <a key={i} href="#" className="h-9 w-9 rounded-lg glass flex items-center justify-center hover:glow-soft transition">
                   <I className="h-4 w-4" />
                 </a>
