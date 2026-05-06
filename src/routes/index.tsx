@@ -1,26 +1,39 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Layout } from "@/components/Layout";
+import { Hero } from "@/components/sections/Hero";
+import { Services } from "@/components/sections/Services";
+import { About } from "@/components/sections/About";
+import { AIShowcase } from "@/components/sections/AIShowcase";
+import { Portfolio } from "@/components/sections/Portfolio";
+import { Process } from "@/components/sections/Process";
+import { Testimonials } from "@/components/sections/Testimonials";
+import { Pricing } from "@/components/sections/Pricing";
+import { TechStack } from "@/components/sections/TechStack";
+import { Contact } from "@/components/sections/Contact";
 
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "CYV Solutions — AI Automation, Web & Mobile Development" },
+      { name: "description", content: "Premium IT services: AI automation, websites, mobile apps, CRMs, cloud and digital solutions. Create Your Vision with CYV." },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. For sites with multiple pages (About, Services, Contact, etc.),
-// create separate route files (about.tsx, services.tsx, contact.tsx) — don't put all pages in this file.
-function PlaceholderIndex() {
-  return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
-  );
-}
-
 function Index() {
-  return <PlaceholderIndex />;
+  return (
+    <Layout>
+      <Hero />
+      <Services />
+      <About />
+      <AIShowcase />
+      <Portfolio />
+      <Process />
+      <Testimonials />
+      <Pricing />
+      <TechStack />
+      <Contact />
+    </Layout>
+  );
 }
